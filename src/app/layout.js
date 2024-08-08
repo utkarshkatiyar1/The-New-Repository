@@ -1,5 +1,10 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+import Header from "../components/Header.jsx"
+import { Providers } from "./GlobalRedux/Provider";
+
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,7 +16,15 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      
+        <body className={inter.className}>
+          <ClerkProvider afterSignOutUrl={process.env.NEXT_PUBLIC_AFTER_SIGN_OUT_URL}>
+            <Header/>
+            <Providers>
+              {children}
+            </Providers>
+            </ClerkProvider></body>
+      
     </html>
   );
 }
