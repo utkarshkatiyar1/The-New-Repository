@@ -9,8 +9,9 @@ import {
   } from "@/components/ui/dialog"
   import { FaRegSquarePlus } from "react-icons/fa6";
 import { RepoGroupForm } from "../form/RepoGroupForm";
+import { RepoForm } from "../form/RepoForm";
   
-export default function RepoGroupDialogBox({githubUsername}) {
+export default function RepoDialogBox({githubUsername}) {
   return (
     <Dialog>
         <DialogTrigger><FaRegSquarePlus/></DialogTrigger>
@@ -20,7 +21,7 @@ export default function RepoGroupDialogBox({githubUsername}) {
             <DialogDescription>
             <span className="visually-hidden">sdfdf</span>
             </DialogDescription>
-            <RepoGroupForm githubUsername={githubUsername}/>
+            <RepoForm/>
             </DialogHeader>
         </DialogContent>
     </Dialog>

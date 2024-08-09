@@ -40,13 +40,13 @@ export default function RightSidebar() {
  
     
   return (
-    <div className="bg-[#2b7a78] w-[20%] h-full gap-1">
-      <div className="flex bg-[#2b7a78] justify-between items-center p-3">
-        <div className="text-white font-semibold">Github Accounts</div>
+    <div className="bg-[#111111] w-[20%] gap-1 border-t-[2px] border-[#212121]">
+      <div className="flex justify-between items-center p-3 border-b-2 border-[#212121] mb-2">
+        <div className="text-white font-bold text-xl">Github Accounts</div>
         <div className="text-white"><DialogBox/></div>
       </div>
 
-      <div className="flex flex-col gap-1 pl-2">
+      <div className="flex flex-col">
         {allGithubAccounts.map((account, index) => <RepoGroup key={index} account={account}/>)}
       </div>
 

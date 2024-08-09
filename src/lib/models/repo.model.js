@@ -1,20 +1,22 @@
 import mongoose from "mongoose";
 
 const RepoSchema = new mongoose.Schema({
-  name: {
+  repoName: {
     type: String,
     required: true,
   },
   
   repoGroupName: {
     type: String,
-    unique: true,
     required: true,
   },
 
   githubUsername: {
     type: String,
-    unique: true,
+    required: true,
+  },
+  clerkId: {
+    type: String,
     required: true,
   }
 });
