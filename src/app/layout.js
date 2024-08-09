@@ -3,7 +3,12 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "../components/Header.jsx"
 import { Providers } from "./GlobalRedux/Provider";
-
+// import { persistor } from "./GlobalRedux/store";
+// import { PersistGate } from "redux-persist/integration/react";
+// import { persistor } from './store';
+// import store from "./GlobalRedux/store";
+// import { Provider } from "react-redux";
+import { PersistGateways } from "./GlobalRedux/PersistGateways";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +26,9 @@ export default function RootLayout({ children }) {
           <ClerkProvider afterSignOutUrl={process.env.NEXT_PUBLIC_AFTER_SIGN_OUT_URL}>
             <Header/>
             <Providers>
-              {children}
+              <PersistGateways>
+                {children}
+              </PersistGateways>
             </Providers>
             </ClerkProvider></body>
       
