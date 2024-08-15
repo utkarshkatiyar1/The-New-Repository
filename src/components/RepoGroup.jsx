@@ -11,6 +11,9 @@ import { getAllRepoByGithubUsername_GroupName } from "@/lib/actions/repo.action"
 import { useDispatch, useSelector } from "react-redux";
 import { addRepos } from "@/app/GlobalRedux/githubAccounts/repoSlice";
 import { addGroup } from "@/app/GlobalRedux/githubAccounts/groupSlice";
+import { RiGitRepositoryLine } from "react-icons/ri";
+import { AiOutlineGithub } from "react-icons/ai";
+import { FaLayerGroup } from "react-icons/fa6";
 // import { useRouter } from "next/router";
 // import { Router } from "next/router";
 
@@ -46,13 +49,21 @@ export default function RepoGroup({account}) {
   return (
     <div>
 
-        <div className="group relative text-white hover:bg-[#212121] flex justify-between p-2 rounded-md ml-2 mr-2">
+        <div className="group relative text-[#474B4F] border-[0.06rem] border-white hover:border-[0.06rem] hover:border-[#D0D7DE] flex justify-between p-2 rounded-md ml-2 mr-2">
+
+          <div className="flex items-center gap-2 hover:text-[#0969DA] text-[#636C76] ">
+            <AiOutlineGithub className=""/>
         
-            <div className="cursor-pointer text-md" onClick={getAllRepoGroupByUsername}>{account.username}</div>
+            <div className="cursor-pointer text-sm hover:underline" onClick={getAllRepoGroupByUsername}>{account.username}</div>
+
+          </div>
             <div className="inner opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white"><RepoGroupDialogBox githubUsername={account.username}/></div>
         </div>
 
-        {showGroups && <div className="flex ml-6 text-white flex-col gap-1 mt-1">{allRepoGroup.map((group, index) => <div onClick={() => getAllRepo(group.groupName)} className="cursor-pointer pl-1 text-sm p-1 text-[#a3a4a7] hover:text-white" key={index}>{group.groupName}</div>)}</div>}
+        {showGroups && <div className="flex ml-8 text-white flex-col gap-1 mt-1">{allRepoGroup.map((group, index) => <div onClick={() => getAllRepo(group.groupName)} className="flex items-center gap-2 cursor-pointer pl-1 text-[0.76rem] p-1 text-[#a3a4a7] hover:text-[#656568]" key={index}>
+          <FaLayerGroup/>
+          <div>{group.groupName}</div>
+          </div>)}</div>}
 
     </div>
 
