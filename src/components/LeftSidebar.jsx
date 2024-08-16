@@ -85,7 +85,7 @@ export default function LeftSidebar({groupName}) {
     dispatch(addPrs(allPrs))
     // console.log("22222222222222222222")
 
-    const fetchPromises = allPrs.map(pr => fetchTestCases(usernameData, repoNameData, patData, pr.number, pr.created_at));
+    const fetchPromises = allPrs.map(pr => fetchTestCases(usernameData, repoNameData, patData, pr.number, pr.created_at, pr.title));
     
     let results = await Promise.all(fetchPromises);
     // console.log(allPrs[0].head.repo.full_name)
@@ -102,11 +102,12 @@ export default function LeftSidebar({groupName}) {
 
   }
 
-  async function fetchTestCases(usernameData, repoNameData, patData, prNumber, created_at) {
+  async function fetchTestCases(usernameData, repoNameData, patData, prNumber, created_at, prTitle) {
     const pullRequests = await getPullsbySha(usernameData, repoNameData, patData, prNumber);
     // setPullRequest_data(pullRequests);
     // const data = await response.json();
     pullRequests.created_at_time = created_at;
+    pullRequests.prTitle = prTitle;
     // pullRequests.repoFullName = repoFullName;
     return pullRequests;
   }

@@ -40,7 +40,7 @@ export default function RightSidebar() {
  
     
   return (
-    <div className="bg-white w-[20%] gap-1 border-t-[0.09rem] border-[#D0D7DE]">
+    <div className="bg-white w-[20%] gap-1 border-t-[0.09rem] border-[#D0D7DE] ">
       <div className="flex justify-between items-center p-3 border-b-[0.09rem] border-[#D0D7DE] mb-2">
         <div className="text-[#24292F] font-bold text-xl">Github Accounts</div>
         <div className="text-white"><DialogBox/></div>

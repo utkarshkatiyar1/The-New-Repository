@@ -60,7 +60,7 @@ export default function RepoGroup({account}) {
             <div className="inner opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white"><RepoGroupDialogBox githubUsername={account.username}/></div>
         </div>
 
-        {showGroups && <div className="flex ml-8 text-white flex-col gap-1 mt-1">{allRepoGroup.map((group, index) => <div onClick={() => getAllRepo(group.groupName)} className="flex items-center gap-2 cursor-pointer pl-1 text-[0.76rem] p-1 text-[#a3a4a7] hover:text-[#656568]" key={index}>
+        {showGroups && <div className="flex ml-8 text-white flex-col gap-1 mt-1">{allRepoGroup.map((group, index) => <div onClick={() => getAllRepo(group.groupName)} className="flex items-center gap-2 cursor-pointer pl-1 text-[12.16px] p-1 text-[#a3a4a7] hover:text-[#656568]" key={index}>
           <FaLayerGroup/>
           <div>{group.groupName}</div>
           </div>)}</div>}
