@@ -6,6 +6,7 @@ import Temp from '@/components/others/Temp';
 import { currentUser } from '@clerk/nextjs/server';
 // import Image from "next/image";
 import { redirect } from 'next/navigation';
+// import { useDispatch } from 'react-redux';
 // import { useState } from 'react';
 
 export default async function Home() {
@@ -21,6 +22,8 @@ export default async function Home() {
   //       }
   //   };
 
+  // const dispatch = useDispatch();
+
     const check = async () => {
       const user = await currentUser();
       if(!user) {
@@ -31,17 +34,36 @@ export default async function Home() {
 
   return (
    
-    <div className='flex w-full min-h-screen'>
+    <div className=''>
       {/* <Temp/> */}
-   
-        <LeftSidebar/>
 
- 
+      <div className='hidden md:flex w-full min-h-screen relative justify-between'>
+        <LeftSidebar/>
 
         <PullRequests/>
 
-  
+
         <RightSidebar/>
+
+      </div>
+
+      <div className='flex md:hidden w-full min-h-screen relative justify-between'>
+        <div className='w-full flex flex-col'>
+          <LeftSidebar/>
+
+          <PullRequests/>
+
+        </div>
+
+
+        <RightSidebar/>
+
+      </div>
+   
+
+
+
+
 
  
       

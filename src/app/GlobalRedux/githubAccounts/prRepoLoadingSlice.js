@@ -13,10 +13,13 @@ export const prRepoLoadingSlice = createSlice({
       gettingPrsRepoLoading: (state, action) => {
         state.prRepoLoading = action.payload;
       },
+      clearPrsRepoLoadingFromStore: (state, action) => {
+        state.prRepoLoading = "rest";
+      },
     }
     
   });
 
-export const {gettingPrsRepoLoading} = prRepoLoadingSlice.actions;
+export const {gettingPrsRepoLoading, clearPrsRepoLoadingFromStore} = prRepoLoadingSlice.actions;
 
 export default prRepoLoadingSlice.reducer

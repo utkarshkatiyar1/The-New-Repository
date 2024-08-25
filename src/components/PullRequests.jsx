@@ -34,9 +34,9 @@ export default function PullRequests() {
    
 
   return (
-    <div className="flex flex-col gap-6 p-4 border-r-[0.09rem] border-t-[0.09rem] border-l-[0.09rem] border-[#D0D7DE] bg-white w-[80%] md:w-[60%]">
+    <div className="flex flex-col gap-6 p-4 w-full md:w-[60%]">
         <div className="mt-4">
-            <span className=" text-[#24292F] text-lg font-[500] border-[0.07rem] px-[0.7rem] py-[0.5rem] bg-[#EEF1F4] rounded-lg p-2  border-[#D0D7DE]">{allPrs[0].head.repo.full_name}</span>
+            <span className=" text-[#24292F] text-lg font-[500] border-[0.07rem] px-[0.7rem] py-[0.5rem] bg-[#EEF1F4] rounded-lg p-2  border-[#D0D7DE]">{allPrs[0]?.head.repo.full_name}</span>
 
         </div>
 

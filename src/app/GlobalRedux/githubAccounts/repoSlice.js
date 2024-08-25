@@ -13,10 +13,21 @@ export const repoSlice = createSlice({
       addRepos: (state, action) => {
         state.repos = action.payload;
       },
+      deleteRepo: (state, action) => {
+        state.repos = state.repos.filter(repo => repo._id !== action.payload);
+      },
+      
+      clearReposFromStore: (state, action) => {
+        state.repos = [];
+      },
+
+      deleteReposByGroupAndUsername: (state, action) => {
+        state.repos = [];
+      },
     }
     
   });
 
-export const {addRepos} = repoSlice.actions;
+export const {addRepos, clearReposFromStore, deleteRepo, deleteReposByGroupAndUsername} = repoSlice.actions;
 
 export default repoSlice.reducer

@@ -13,10 +13,13 @@ export const prsSlice = createSlice({
       addPrs: (state, action) => {
         state.prs = action.payload;
       },
+      clearPrsFromStore: (state, action) => {
+        state.prs = [];
+      },
     }
     
   });
 
-export const {addPrs} = prsSlice.actions;
+export const {addPrs, clearPrsFromStore} = prsSlice.actions;
 
 export default prsSlice.reducer

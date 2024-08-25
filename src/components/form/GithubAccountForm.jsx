@@ -48,15 +48,16 @@ export function GithubAccountForm() {
   // ...
 
   return (
-    <Form {...form}>
+    <div className="">
+      <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
        <FormField
           control={form.control}
           name="pat"
           render={({ field }) => (
-            <FormItem className="flex flex-col w-full gap-3">
-              <FormLabel className="text-base-semibold text-gray-200">
-                PAT
+            <FormItem className="flex flex-col items-start w-full gap-3">
+              <FormLabel className="text-base-semibold text-[]">
+                {"PAT (Personal Access Token from Github)"}
               </FormLabel>
 
               <FormControl>
@@ -75,9 +76,9 @@ export function GithubAccountForm() {
           control={form.control}
           name="username"
           render={({ field }) => (
-            <FormItem className="flex flex-col w-full gap-3">
-              <FormLabel className="text-base-semibold text-gray-200">
-                Username
+            <FormItem className="flex flex-col items-start w-full gap-3">
+              <FormLabel className="text-base-semibold">
+                Github Username
               </FormLabel>
 
               <FormControl>
@@ -94,5 +95,8 @@ export function GithubAccountForm() {
         <Button type="submit">Submit</Button>
       </form>
     </Form>
+
+    </div>
+    
   )
 }

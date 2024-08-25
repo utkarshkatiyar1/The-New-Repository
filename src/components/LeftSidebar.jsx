@@ -11,16 +11,21 @@ import RepoGroup from "./RepoGroup";
 import { useDispatch, useSelector } from "react-redux";
 // import { useRouter } from "next/router";
 // import { Router } from "next/router";
-import { addGithubAccounts } from "@/app/GlobalRedux/githubAccounts/githubAccountSlice";
-import { addRepoPrs } from "@/app/GlobalRedux/githubAccounts/prRepoSlice";
-import { addPrs } from "@/app/GlobalRedux/githubAccounts/prSlice";
+import { addGithubAccounts, clearGithubAccountsFromStore } from "@/app/GlobalRedux/githubAccounts/githubAccountSlice";
+import { addRepoPrs, clearRepoPrsFromStore } from "@/app/GlobalRedux/githubAccounts/prRepoSlice";
+import { addPrs, clearPrsFromStore } from "@/app/GlobalRedux/githubAccounts/prSlice";
 import RepoDialogBox from "./dialogbox/RepoDialogBox";
 import getPullsbySha, { getPullRequests, getWorkflowRuns, getWorkflowRunsForPR } from "@/lib/actions/pull-request.action";
 import { GoRepo } from "react-icons/go";
-import { gettingPrsRepoLoading } from "@/app/GlobalRedux/githubAccounts/prRepoLoadingSlice";
+import { gettingPrsRepoLoading, clearPrsRepoLoadingFromStore } from "@/app/GlobalRedux/githubAccounts/prRepoLoadingSlice";
+import { MdOutlineDeleteOutline } from "react-icons/md";
+import { deleteRepoById } from "@/lib/actions/repo.action";
+import { deleteRepo } from "@/app/GlobalRedux/githubAccounts/repoSlice";
 
 export default function LeftSidebar({groupName}) {
   const dispatch = useDispatch();
+
+
   const [group_data, setGroup_data] = useState({})
   const [repos_data, setRepos_data] = useState([]);
 
@@ -111,21 +116,39 @@ export default function LeftSidebar({groupName}) {
     // pullRequests.repoFullName = repoFullName;
     return pullRequests;
   }
+
+  const handleRepoDelete = async (repoId) => {
+
+
+    const deletedRepo = await deleteRepoById(repoId); //"Repo has been deleted"
+    dispatch(deleteRepo(repoId));
+    console.log(deleteRepo)
+
+  }
     
     
   return (
-    <div className="bg-white text-balack w-[20%] border-t-[0.09rem] border-[#D0D7DE]">
-      <div className="flex justify-between items-center border-b-[0.09rem] p-3 border-[#D0D7DE] mb-4 font-semibold">
-        <div>{`${group_data.username} / ${group_data.name}`}</div>
-        <RepoDialogBox/>
+    <div className="flex pl-2 py-2 md:py-0 md:pl-0 border-b-[0.06rem] md:block md:bg-white md:text-black md:w-[20%] md:border-r-[0.06rem] border-[#D0D7DE] ">
+      <div className="md:flex md:justify-between md:items-center md:border-b-[0.06rem] md:p-3 md:border-[#D0D7DE] md:mb-4 md:font-semibold">
+        <div className="hidden md:block">{`${group_data.username} / ${group_data.name}`}</div>
+
+        <div className="mr-2 md:mr-0">
+          <RepoDialogBox/>
+
+        </div>
       </div>
 
-      <div className="m-2 flex flex-col gap-2">
-        {repos_data && repos_data.map((field) => <div key={field.repoName} className="flex items-center gap-3 cursor-pointer border-[0.06rem] border-[#D0D7DE] bg-white rounded-md p-2 text-sm text-black hover:bg-[#F6F7F8] transition-colors duration-200 ease-in-out" onClick={() => fetchPullBySha(field.repoName)}>
+      <div className="overflow-x-auto whitespace-nowrap mr-11 md:m-2 flex md:flex-col gap-3 md:gap-2 scrollbar-hide">
+        {repos_data && repos_data.map((field) => <div key={field.repoName} className="flex items-center gap-1 bg-[#EEF1F4] py-1 px-2 rounded-lg md:gap-3 cursor-pointer transition hover:bg-[#d8dbdd] md:border-[0.06rem] md:border-[#D0D7DE] md:bg-white md:rounded-md md:p-2 md:text-sm md:text-black md:hover:bg-[#F6F7F8] md:transition-colors md:duration-200 md:ease-in-out justify-between" >
 
-
+        <div onClick={() => fetchPullBySha(field.repoName)} className="flex gap-1 items-center">
           <GoRepo/>
+  
           <div>{field.repoName}</div>
+
+        </div>
+       
+          <MdOutlineDeleteOutline onClick={() => handleRepoDelete(field._id)} className="text-red-600"/>
           
           </div>)}
 

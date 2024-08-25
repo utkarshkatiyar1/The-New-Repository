@@ -46,3 +46,19 @@ export async function getAllRepoByGithubUsername_GroupName(repoGroupName, github
     throw new Error(`Error getting all Github repo by github username and group name: ${error.message}`);
   }
 }
+export async function deleteRepoById(repoId) {
+  try {
+    connectToDB();
+
+    const {userId} = auth();
+    if(!userId) return;
+
+    const result = await Repo.findByIdAndDelete(repoId); //result is null
+    console.log(result)
+
+    return "Repo has been deleted";
+
+  } catch (error) {
+    throw new Error(`Error deleting repo: ${error.message}`);
+  }
+}

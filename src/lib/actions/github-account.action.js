@@ -6,6 +6,9 @@ import GithubAccount from "../models/github-account.model";
 import { auth } from '@clerk/nextjs/server';
 import { decrypt, encrypt } from "../utils/encryption.util";
 
+import Repo from "../models/repo.model";
+import RepoGroup from "../models/repo-group.model";
+
 export async function createGithubAccount({
   pat, username
 }) {
@@ -66,3 +69,29 @@ export async function getPatByUsername(username) {
     throw new Error(`Error getting pat by username: ${error.message}`);
   }
 }
+
+export const deleteGithubAccount = async (account) => {
+  try {
+    // Ensure database is connected
+    connectToDB();
+
+    // Find and delete the RepoGroup document
+    console.log(account)
+    const deletedAccount = await GithubAccount.findOneAndDelete({ username: account });
+    console.log("deleted: ", deletedAccount)
+
+    if (!deletedAccount) {
+      return { success: false, message: 'GithubAccount not found' };
+    }
+
+    // Delete all Repo documents associated with this RepoGroup
+    await RepoGroup.deleteMany({ githubUsername: account });
+
+    await Repo.deleteMany({ githubUsername: account });
+
+    return { success: true, message: 'GithubAccount deleted successfully' };
+  } catch (error) {
+    console.error('Error deleting GithubAccount:', error);
+    return { success: false, message: 'An error occurred while deleting GithubAccount' };
+  }
+};

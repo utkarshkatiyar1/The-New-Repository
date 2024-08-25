@@ -13,10 +13,16 @@ export const groupSlice = createSlice({
       addGroup: (state, action) => {
         state.group = action.payload;
       },
+      clearGroupFromStore: (state, action) => {
+        state.group = {};
+      },
+      deleteGroupAndRepos: (state, action) => {
+        state.group = {};
+      },
     }
     
   });
 
-export const {addGroup} = groupSlice.actions;
+export const {addGroup, clearGroupFromStore, deleteGroupAndRepos} = groupSlice.actions;
 
 export default groupSlice.reducer

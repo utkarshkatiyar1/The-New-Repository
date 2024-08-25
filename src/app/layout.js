@@ -20,9 +20,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="m-0">
       
-        <body className={inter.className}>
+        <body className={`${inter.className} m-0`}>
           <ClerkProvider afterSignOutUrl={process.env.NEXT_PUBLIC_AFTER_SIGN_OUT_URL}>
             <Header/>
             <Providers>

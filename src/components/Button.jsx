@@ -1,14 +1,27 @@
 "use client"
+import { putShooData } from "@/lib/actions/shoo.action";
 import Link from "next/link";
+import { shoodata } from "./shooproduct";
+import { PiArrowArcRightThin } from "react-icons/pi";
+import { putOneShooData } from "@/lib/actions/oneshoo.action";
 // import { useRouter } from "next/router";
 // import { Router } from "next/router";
 
-export default function Home({username}) {
+
+
+export default function Button({username}) {
     // const router = useRouter();
 
-    // const handleclick = async () => {
-    //     router.push(`/user${username}`);
-    // }
+    const handleclick = async () => {
+
+      // const data = await putShooData(shoodata);
+      
+      shoodata.map(async (d) => {
+        const dd = await putOneShooData(d)
+        console.log(dd)
+      })
+        
+    }
     
   return (
     // <button onClick={handleclick} className="bg-slate-600">
