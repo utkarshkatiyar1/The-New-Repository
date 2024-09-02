@@ -7,7 +7,7 @@ export default function LeftChatbar() {
 
 
   return (
-    <div className="">
+    <div className="bg-[#eaeaea] w-[10%]">
         left chat bar
 
 

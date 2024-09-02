@@ -15,7 +15,7 @@ const ProductPage = ({params, searchParams}) => {
 
 
   return (
-    <div className="flex gap-2 justify-between h-full">
+    <div className="flex justify-between h-full">
         
         <LeftChatbar/>
         <MainChat name={name} address={address} price={price} imagePath={imagePath}/>
