@@ -13,10 +13,10 @@ import ListingItem from "./ListingItem";
 export default function Hero() {
     SwiperCore.use([Navigation]);
     const offerListings = [
-        {_id: 1, imageUrl: "/images/Corn.webp", name: "Corn", address: "kanpur", discountPrice: 200, regularPrice: 500, type: "rent"},
-        {_id: 2, imageUrl: "/images/Onions.webp", name: "Onions", address: "Rawatpur", discountPrice: 200, regularPrice: 900, type: "rent"},
-        {_id: 3, imageUrl: "/images/Potatoes.webp", name: "Potatoes", address: "Geetanagar", discountPrice: 300, regularPrice: 800, type: "rent"},
-        {_id: 4, imageUrl: "/images/Tomatoes.jpg", name: "Tomatoes", address: "Swaroop Nagar", discountPrice: 100, regularPrice: 1000, type: "rent"},
+        {_id: 1, imageUrl: "/images/Corn.webp", name: "Corn", address: "kanpur", price: 400},
+        {_id: 2, imageUrl: "/images/Onions.webp", name: "Onions", address: "Rawatpur", price: 890},
+        {_id: 3, imageUrl: "/images/Potatoes.webp", name: "Potatoes", address: "Geetanagar", price: 40},
+        {_id: 4, imageUrl: "/images/Tomatoes.jpg", name: "Tomatoes", address: "Swaroop Nagar", price: 200},
     ]
 
 

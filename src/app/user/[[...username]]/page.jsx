@@ -1,8 +1,8 @@
 
-import LeftSidebar from '@/components/LeftSidebar';
-import PullRequests from '@/components/PullRequests';
-import RightSidebar from '@/components/RightSidebar';
-import Temp from '@/components/others/Temp';
+// import LeftSidebar from '@/components/LeftSidebar';
+// import PullRequests from '@/components/PullRequests';
+// import RightSidebar from '@/components/RightSidebar';
+// import Temp from '@/components/others/Temp';
 import { currentUser } from '@clerk/nextjs/server';
 // import Image from "next/image";
 import { redirect } from 'next/navigation';
@@ -38,25 +38,25 @@ export default async function Home() {
       {/* <Temp/> */}
 
       <div className='hidden md:flex w-full min-h-screen relative justify-between'>
-        <LeftSidebar/>
+        {/* <LeftSidebar/>
 
         <PullRequests/>
 
 
-        <RightSidebar/>
+        <RightSidebar/> */}
 
       </div>
 
       <div className='flex md:hidden w-full min-h-screen relative justify-between'>
         <div className='w-full flex flex-col'>
-          <LeftSidebar/>
+          {/* <LeftSidebar/>
 
-          <PullRequests/>
+          <PullRequests/> */}
 
         </div>
 
 
-        <RightSidebar/>
+        {/* <RightSidebar/> */}
 
       </div>
    

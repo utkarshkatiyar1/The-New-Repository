@@ -1,8 +1,10 @@
+import Link from 'next/link'
 import React from 'react'
 // import { Link } from 'next/link'
 import {MdLocationOn} from 'react-icons/md'
 
 const ListingItem = ({listing}) => {
+    const id = listing._id
   return (
     <div className='bg-white shadow-md hover:scale-105 transition-scale duration-300 overflow-hidden rounded-lg w-full sm:w-[330px] border'>
         <div className='p-3'>
@@ -15,23 +17,17 @@ const ListingItem = ({listing}) => {
                     <MdLocationOn className='h-4 w-4 text-green-700'/>
                     <p className='text-sm text-gray-600 truncate w-full'>{listing.address}</p>
                 </div>
-                {/* Since there will be multiple lines in the descriptin and we want to truncate all the lines but in tailwind css there are no class to do so. but there is an tailwind github package that provide this functionality so we are going to install it. `npm install -D @tailwindcss/line-clamp`. you can search it for the tailwind lineclamp github. and get this install command and we have to configure tailwind.config.js file with the code provided in the same github docs only the plugin->*/}
+          
                 <p className='text-sm text-gray-600 line-clamp-2'>{listing.description}</p>
 
                 <p className='text-sm text-slate-500 mt-2 font-semibold'>
                      ₹
-                    {listing.offer ? listing.discountPrice.toLocaleString('en-Us') : listing.regularPrice.toLocaleString('en-Us')}
-                    {listing.type === 'rent' && ' / kg'}
+                    {listing.price.toLocaleString('en-Us')}
+                    {' / kg'}
                 </p>
+                <Link href={`/chat/${id}?name=${listing.name}&imagePath=${encodeURIComponent(listing.imageUrl)}&address=${listing.address}&price=${listing.price}`} className='text-white bg-green-600 rounded-md p-2 flex w-[6rem] items-center justify-center hover:shadow-lg hover:border-2 hover:border-green-600 hover:bg-white hover:text-green-600 cursor-pointer'><span>Negotiate</span></Link>
 
-                {/* <div className='text-slate-700 flex gap-4'>
-                    <div className='font-bold text-xs'>
-                        {listing.bedrooms > 1 ? `${listing.bedrooms} beds` : `${listing.bedrooms} bed`}
-                    </div>
-                    <div className='font-bold text-xs'>
-                        {listing.bathrooms > 1 ? `${listing.bathrooms} baths` : `${listing.bathrooms} bath`}
-                    </div>
-                </div> */}
+      
 
             </div>
         </div>
