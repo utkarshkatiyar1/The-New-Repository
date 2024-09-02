@@ -1,12 +1,14 @@
 
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-import { auth } from '@clerk/nextjs/server';
+import { auth, currentUser } from '@clerk/nextjs/server';
 // import Button from "./Button";
 import { FaUserCircle } from "react-icons/fa";
 import UserProfile from "./UserProfile";
 
-export default function Home() {
+export default async function Home() {
+  const user = await currentUser();
+  console.log(user)
 
 
   const {userId} = auth();
@@ -26,7 +28,7 @@ export default function Home() {
       }
 
       <div className="flex mr-4">
-        <UserProfile/>
+        <UserProfile userId={userId} />
 
 
         {/* {userId && <UserButton className=""/>} */}
