@@ -19,9 +19,9 @@ const ListingItem = ({listing}) => {
                 <p className='text-sm text-gray-600 line-clamp-2'>{listing.description}</p>
 
                 <p className='text-sm text-slate-500 mt-2 font-semibold'>
-                    $
+                     ₹
                     {listing.offer ? listing.discountPrice.toLocaleString('en-Us') : listing.regularPrice.toLocaleString('en-Us')}
-                    {listing.type === 'rent' && ' / month'}
+                    {listing.type === 'rent' && ' / kg'}
                 </p>
 
                 {/* <div className='text-slate-700 flex gap-4'>

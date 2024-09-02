@@ -30,12 +30,12 @@ export default function Hero() {
 
         <div className=" flex flex-col gap-6 py-28 px-3 max-w-6xl mx-auto">
             <h1 className="text-slate-700 font-bold text-3xl lg:text-6xl">
-            Find your next <span className="text-slate-500">perfect</span> <br />{" "}
-            place with ease
+            Find the <span className="text-slate-500">Best</span> <br />{" "}
+            Seller and Buyer
             </h1>
 
             <div className="text-gray-400 text-xs sm:text-sm">
-            Dream House will help you find your home fast, easy and comfortable.{" "}
+            Green Room will help you find best seller and buyer of crop of any kind.{" "}
             <br />
             Our expert support are always available.
             </div>
