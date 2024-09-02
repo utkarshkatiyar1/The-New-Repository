@@ -25,7 +25,7 @@ export default function ChatHeader({name, address, price, imagePath}) {
         <div className="p-1 mr-2 relative">
             <BsThreeDotsVertical onClick={() => setOpen(!open)} className="text-[1.3rem] cursor-pointer"/>
             {
-                open &&  <div className="absolute bg-white right-6 p-2 top-6 flex flex-col gap-1 rounded-lg shadow-md">
+                open &&  <div className="absolute bg-white right-6 p-2 top-6 flex flex-col gap-1 rounded-lg shadow-md z-40">
                 <div className="cursor-pointer hover:bg-[#F3F4F6] p-1 rounded-md">CreateContract</div>
                 <div className="cursor-pointer hover:bg-[#F3F4F6] p-1 rounded-md">DeleteChat</div>
                 <div className="cursor-pointer hover:bg-[#F3F4F6] p-1 rounded-md">Block</div>

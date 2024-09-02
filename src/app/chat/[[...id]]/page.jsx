@@ -19,7 +19,8 @@ const ProductPage = ({params, searchParams}) => {
         
         <LeftChatbar/>
         <MainChat name={name} address={address} price={price} imagePath={imagePath}/>
-        <RightChatbar/>
+        {/* <RightChatbar/> */}
+
     </div>
   );
 };
