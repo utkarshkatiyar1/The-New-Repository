@@ -12,13 +12,17 @@ import ListingItem from "./ListingItem";
 
 export default function Hero() {
     SwiperCore.use([Navigation]);
-    const offerListings = [
-        {_id: 1, imageUrl: "/images/Corn.webp", name: "Corn", address: "kanpur", price: 400},
-        {_id: 2, imageUrl: "/images/Onions.webp", name: "Onions", address: "Rawatpur", price: 890},
-        {_id: 3, imageUrl: "/images/Potatoes.webp", name: "Potatoes", address: "Geetanagar", price: 40},
-        {_id: 4, imageUrl: "/images/Tomatoes.jpg", name: "Tomatoes", address: "Swaroop Nagar", price: 200},
+    const onionListings = [
+        {_id: 1, imageUrl: "onions/1000_F_678136242_LB3RDaJXWxaTVSpcv4za5d7fwdNz0vhd.jpg", name: "Yellow Onion", address: "kanpur", price: 400},
+        {_id: 2, imageUrl: "onions/1000_F_731702005_g4vZriF3sBFRFHmggOLNRKUPKqXWRwX3.jpg", name: "Red onion", address: "Rawatpur", price: 890},
+        {_id: 3, imageUrl: "onions/1000_F_936446558_OxLxALP7M1OcXKo33XOLUYsljBjSV0Wn.jpg", name: "Raw onion", address: "Geetanagar", price: 40},
     ]
 
+    const potatoListings =[
+      {_id: 4, imageUrl: "potato/potatoes-1585075_1280.jpg", name: "Yellow Potato", address: "Mandhana", price: 40},
+      {_id: 5, imageUrl:"potato/potatoes-2329648_1280.jpg", name: "Raw Potato", address: "Lucknow", price: 35},
+      {_id: 6, imageUrl:"potato/red potato.jpg", name: "Red Potato", address: "Prayagraj", price: 50}
+    ]
 
 
 
@@ -48,9 +52,9 @@ export default function Hero() {
             navigation
             autoplay={{ delay: 2600 }}
             loop={true} className="flex w-[90%] items-center justify-center rounded-lg relative">
-                {offerListings &&
-                offerListings.length > 0 &&
-                offerListings.map((listing) => (
+                {onionListings &&
+                onionListings.length > 0 &&
+                onionListings.map((listing) => (
                     <SwiperSlide key={listing._id}>
                     <div
                         style={{
@@ -79,16 +83,36 @@ export default function Hero() {
 
       <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
       {
-          offerListings && offerListings.length > 0 && (
+          onionListings && onionListings.length > 0 && (
             <div>
               <div className="my-3">
-                <h2 className="text-2xl font-semibold text-slate-600">Recent offers</h2>
+                <h2 className="text-2xl font-semibold text-slate-600">Recent offers on onions</h2>
                 <div  className="text-sm text-blue-800 hover:underline">
                   Show more offers
                 </div>
               </div>
               <div className="flex flex-wrap gap-4">
-                {offerListings.map((listing) => (
+                {onionListings.map((listing) => (
+                  <ListingItem listing={listing} key={listing._id}/>
+                ))}
+              </div>
+            </div>
+          )
+        }
+      </div>
+
+      <div className="max-w-6xl mx-auto p-3 flex flex-col gap-8 my-10">
+      {
+          potatoListings && potatoListings.length > 0 && (
+            <div>
+              <div className="my-3">
+                <h2 className="text-2xl font-semibold text-slate-600">offers on potato</h2>
+                <div  className="text-sm text-blue-800 hover:underline">
+                  Show more offers
+                </div>
+              </div>
+              <div className="flex flex-wrap gap-4">
+                {potatoListings.map((listing) => (
                   <ListingItem listing={listing} key={listing._id}/>
                 ))}
               </div>
