@@ -15,7 +15,7 @@ export default function LeftChatbar() {
             <RiChatNewLine className="text-[1.3rem]"/>
           </div>
         </div>
-        <div className="flex items-center rounded-md w-[90%] mx-auto bg-[#F3F4F6] overflow-hidden border-b-[0.09rem] border-gray-500">
+        <div className="flex items-center rounded-md w-[90%] mx-auto bg-[#F3F4F6] overflow-hidden border-b-[0.09rem] border-gray-500 shadow-md">
           <div className="p-2">
             <CiSearch/>
           </div>
@@ -26,7 +26,7 @@ export default function LeftChatbar() {
           />
         </div>
         <div className="flex flex-col gap-2 items-center">
-        {contacts.map((person, index)=> <div key={index} className="bg-gray-200 p-2 rounded-md w-[90%] cursor-pointer hover:bg-white">{person.name}</div>)}
+        {contacts.map((person, index)=> <div key={index} className="bg-gray-200 p-2 rounded-md w-[90%] cursor-pointer hover:bg-white shadow-md">{person.name}</div>)}
         </div>
 
 
