@@ -427,7 +427,7 @@ export function ContractForm() {
                         <p> The parties have agreed that it shall be the responsibility of the Farmer to take adequate/necessary steps for growing
                             the said crop and also ensuring that the technical guidance and instructions given by the Company are followed
                             faithfully and the farmer undertakes to comply with regard to the quality of seeds to be used, grades/variety of fertilizers
-                            to be used and also the measures' stipulated for plant protection including the usage of plant protection chemicals.
+                            to be used and also the measures stipulated for plant protection including the usage of plant protection chemicals.
                                                         </p>
                     </div>
                     <div className="flex gap-1 ml-6">
@@ -464,7 +464,7 @@ export function ContractForm() {
                     </div>
                     <div className="flex gap-1 ml-6">
                         <span>7.</span>
-                        <p> The company may at its sole discretion may consider extending financial assistance which would be limited to Rs <span className="text-green-500 font-bold">{!amount ? "..........." : amount}</span> to the farmer, on company's technical
+                        <p> The company may at its sole discretion may consider extending financial assistance which would be limited to Rs <span className="text-green-500 font-bold">{!amount ? "..........." : amount}</span> to the farmer, on company technical
                         reports/recommendation given by the area supervisors to assist the farmer and meeting the terms of this agreement
                         including for ensuring proper yield of the crop from the said land. It is however, clarified that this financial assistance
                         cannot be claimed by the farmer as a matter of right. 

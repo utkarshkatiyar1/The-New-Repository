@@ -27,8 +27,8 @@ export default function ProfileTabs() {
                 <TabsTrigger className="w-1/3" value="message">Message</TabsTrigger>
             </TabsList>
             <TabsContent className="flex flex-col gap-2 items-center" value="posts">
-                {offerListings.map((listing) => (
-                    <TabListingItem name={listing.name} address={listing.address} price={listing.price} imagePath={listing.imageUrl} />
+                {offerListings.map((listing, index) => (
+                    <TabListingItem key={index} name={listing.name} address={listing.address} price={listing.price} imagePath={listing.imageUrl} />
                 ))}
             </TabsContent>
             <TabsContent value="activities">activity tab</TabsContent>
