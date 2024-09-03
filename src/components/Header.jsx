@@ -18,7 +18,7 @@ export default async function Home() {
   return (
     <div className="bg-green-400 flex items-center justify-between h-[5rem] border-b-[0.09rem] border-green-700 w-full">
       {/* <Button/> */}
-      <div className="ml-3 font-bold text-white text-[2.5rem]">Green Room</div>
+      <Link href={`/`} className="ml-3 font-bold text-white text-[2.5rem]">Green Room</Link>
 
       {!userId && <div className="flex gap-2 items-center mr-4">
         <div className="bg-blue-700 pl-2 pr-2 pt-1 pb-1 rounded-md text-white hover:opacity-85"><Link className="" href="/sign-up">Sign Up</Link></div>
@@ -31,7 +31,7 @@ export default async function Home() {
         <UserProfile userId={userId} />
 
 
-        {/* {userId && <UserButton className=""/>} */}
+        {userId && <UserButton className=""/>}
 
       </div>
 

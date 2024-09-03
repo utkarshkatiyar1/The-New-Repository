@@ -40,12 +40,6 @@ export default function Hero() {
             Our expert support are always available.
             </div>
 
-            <div
-       
-            className="text-xs sm:text-sm text-blue-800 font-bold hover:underline w-[120px]"
-            >
-            Let's get started...
-            </div>
         
         </div>
 

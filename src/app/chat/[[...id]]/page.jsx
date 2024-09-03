@@ -18,7 +18,7 @@ const ProductPage = ({params, searchParams}) => {
     <div className="flex justify-between h-full">
         
         <LeftChatbar/>
-        <MainChat name={name} address={address} price={price} imagePath={imagePath}/>
+        <MainChat id={params.id} name={name} address={address} price={price} imagePath={imagePath}/>
         {/* <RightChatbar/> */}
 
     </div>

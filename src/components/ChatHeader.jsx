@@ -4,10 +4,11 @@ import ChatListingItem from "./ChatListingItem";
 import { FaCircleUser } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
-export default function ChatHeader({name, address, price, imagePath}) {
+export default function ChatHeader({id}) {
     const [open, setOpen] = useState(false)
    
 
@@ -26,7 +27,7 @@ export default function ChatHeader({name, address, price, imagePath}) {
             <BsThreeDotsVertical onClick={() => setOpen(!open)} className="text-[1.3rem] cursor-pointer"/>
             {
                 open &&  <div className="absolute bg-white right-6 p-2 top-6 flex flex-col gap-1 rounded-lg shadow-md z-40">
-                <div className="cursor-pointer hover:bg-[#F3F4F6] p-1 rounded-md">CreateContract</div>
+                <Link href={`/createContract/${id}`} className="cursor-pointer hover:bg-[#F3F4F6] p-1 rounded-md">CreateContract</Link>
                 <div className="cursor-pointer hover:bg-[#F3F4F6] p-1 rounded-md">DeleteChat</div>
                 <div className="cursor-pointer hover:bg-[#F3F4F6] p-1 rounded-md">Block</div>
                 <div className="cursor-pointer hover:bg-[#F3F4F6] p-1 rounded-md">Refresh</div>

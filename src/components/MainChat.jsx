@@ -8,17 +8,17 @@ import { MdEmojiEmotions } from "react-icons/md";
 import ChatHeader from "./ChatHeader";
 
 
-export default function MainChat({name, address, price, imagePath}) {
+export default function MainChat({id, name, address, price, imagePath}) {
    
 
 
   return (
     <div className="bg-white w-[80%] min-h-screen flex justify-between flex-col items-center">
       <div className="w-full flex flex-col items-center gap-1">
-        <ChatHeader/>
+        <ChatHeader id={id}/>
         <ChatListingItem name={name} address={address} price={price} imagePath={imagePath}/>
       </div>
-        <div className="flex w-full bg-gray-100 mb-[4rem] p-2 border-t-[0.09rem] border-gray-500 justify-center items-center gap-2">
+        <div className="flex w-full bg-gray-100  p-2 border-t-[0.09rem] border-gray-500 justify-center items-center gap-2">
 
           <div className="hover:bg-white p-2">
             <MdEmojiEmotions className="text-[1.3rem]"/>
