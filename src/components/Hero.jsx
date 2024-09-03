@@ -25,7 +25,7 @@ export default function Hero() {
     ]
 
     const offerListings = [
-        {_id: 1, imageUrl: "/images/Corn.webp", name: "Corn", address: "kanpur", price: 400},
+        {_id: 1, imageUrl: "/images/Corn.avif", name: "Corn", address: "kanpur", price: 400},
         {_id: 2, imageUrl: "/images/Onions.webp", name: "Onions", address: "Rawatpur", price: 890},
         {_id: 3, imageUrl: "/images/Potatoes.webp", name: "Potatoes", address: "Geetanagar", price: 40},
         {_id: 4, imageUrl: "/images/Tomatoes.jpg", name: "Tomatoes", address: "Swaroop Nagar", price: 200},
