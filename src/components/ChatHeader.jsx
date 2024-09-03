@@ -14,9 +14,9 @@ export default function ChatHeader({id}) {
 
 
   return (
-    <div className="bg-[#F3F4F6] w-full flex justify-between items-center border-b-[0.09rem] border-gray-500">
+    <div className="bg-[#F3F4F6] w-full flex justify-between items-center shadow-md">
         <div className="flex items-center gap-2">
-            <div className="p-2 ml-2">
+            <div className="p-2 ml-2 cursor-pointer">
             <FaCircleUser className="text-[2rem]"/>
             </div>
 

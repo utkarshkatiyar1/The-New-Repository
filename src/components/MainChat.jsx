@@ -13,7 +13,7 @@ export default function MainChat({id, name, address, price, imagePath}) {
 
 
   return (
-    <div className="bg-white w-[80%] min-h-screen flex justify-between flex-col items-center">
+    <div className="bg-white w-[75%] min-h-screen flex justify-between flex-col items-center">
       <div className="w-full flex flex-col items-center gap-1">
         <ChatHeader id={id}/>
         <ChatListingItem name={name} address={address} price={price} imagePath={imagePath}/>
@@ -32,7 +32,7 @@ export default function MainChat({id, name, address, price, imagePath}) {
                   placeholder="Type a massege..."
                   
                 />
-                <div className="hover:bg-white p-2">
+                <div className="hover:bg-white p-2 cursor-pointer">
                   <IoSend className="text-[1.6rem] "/>
 
                 </div>
