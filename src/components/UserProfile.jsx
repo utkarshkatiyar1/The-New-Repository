@@ -20,7 +20,7 @@ export default function UserProfile({userId}) {
         {open && <div className="bg-white rounded-md absolute right-8 top-[3.3rem] p-2 flex flex-col gap-1 shadow-md text-[0.9rem] z-50">
           <Link href={`/profile/${userId}`} className="hover:bg-gray-200 p-1 rounded-md cursor-pointer">Your profile</Link>
           <div className="hover:bg-gray-200 p-1 rounded-md cursor-pointer">Payment history</div>
-          <div className="hover:bg-gray-200 p-1 rounded-md cursor-pointer">About</div>
+          <div className="hover:bg-gray-200 p-1 rounded-md cursor-pointer">List</div>
           <div className="hover:bg-gray-200 p-1 rounded-md cursor-pointer">Notes</div>
         </div>}
         

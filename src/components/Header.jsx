@@ -31,7 +31,7 @@ export default async function Home() {
         <UserProfile userId={userId} />
 
 
-        {/* {userId && <UserButton className=""/>} */}
+        {userId && <UserButton className=""/>}
 
       </div>
 
