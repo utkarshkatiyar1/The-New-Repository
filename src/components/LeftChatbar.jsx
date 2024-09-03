@@ -9,17 +9,19 @@ export default function LeftChatbar() {
 
   return (
     <div className="bg-[#eaeaea] w-[20%] flex flex-col gap-3">
-        <div className="p-2">
+        <div className="p-1 flex items-center justify-between">
           <span className="p-2 font-semibold">Chats</span>
-          <div>
-            <RiChatNewLine/>
+          <div className="p-2">
+            <RiChatNewLine className="text-[1.3rem]"/>
           </div>
         </div>
-        <div className="flex items-center">
-          <CiSearch />
+        <div className="flex items-center rounded-md w-[90%] mx-auto bg-[#F3F4F6] overflow-hidden border-b-[0.09rem] border-gray-500">
+          <div className="p-2">
+            <CiSearch/>
+          </div>
           <Input
           type='text'
-          className='rounded-md w-[90%] bg-[#F3F4F6] focus:bg-white'
+          className='bg-[#F3F4F6]'
           placeholder='Search Chat'
           />
         </div>
