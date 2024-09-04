@@ -3,11 +3,11 @@ import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import { auth, currentUser } from '@clerk/nextjs/server';
 // import Button from "./Button";
-import { FaUserCircle } from "react-icons/fa";
-import UserProfile from "./UserProfile";
+
 import { GiCorn } from "react-icons/gi";
 import { Input } from "./ui/input";
 import { CiSearch } from "react-icons/ci";
+import ProfileDropDown from "./ProfileDropDown";
 
 export default async function Home() {
   const user = await currentUser();
@@ -43,8 +43,8 @@ export default async function Home() {
       </div>
       }
 
-      <div className="flex mr-4">
-        <UserProfile userId={userId} />
+      <div className={`flex mr-4 ${!userId && "hidden"} border-none outline-none`}>
+        {userId && <ProfileDropDown userId={userId} />}
 
 
         {/* {userId && <UserButton className=""/>} */}

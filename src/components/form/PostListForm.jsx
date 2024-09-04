@@ -57,14 +57,14 @@ export function PostListForm() {
   // ...
 
   return (
-    <div className="">
+    <div className="w-[70%] p-8">
       <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
        <FormField
           control={form.control}
           name="CropName"
           render={({ field }) => (
-            <FormItem className="flex items-center w-full gap-3">
+            <FormItem className="flex flex-col w-full">
               <FormLabel className="text-base-semibold text-[]">
                 {"CropName"}
               </FormLabel>
@@ -85,7 +85,7 @@ export function PostListForm() {
           control={form.control}
           name="Qunatity"
           render={({ field }) => (
-            <FormItem className="flex items-center w-full gap-3">
+            <FormItem className="flex flex-col w-full">
               <FormLabel className="text-base-semibold">
               Qunatity
               </FormLabel>
@@ -105,7 +105,7 @@ export function PostListForm() {
           control={form.control}
           name="Price"
           render={({ field }) => (
-            <FormItem className="flex items-center w-full gap-3">
+            <FormItem className="flex flex-col w-full">
               <FormLabel className="text-base-semibold">
               Price
               </FormLabel>
@@ -126,7 +126,7 @@ export function PostListForm() {
           control={form.control}
           name="Address"
           render={({ field }) => (
-            <FormItem className="flex items-center w-full gap-3">
+            <FormItem className="flex flex-col w-full">
               <FormLabel className="text-base-semibold">
                 Address
               </FormLabel>
@@ -147,7 +147,7 @@ export function PostListForm() {
           control={form.control}
           name="Address"
           render={({ field }) => (
-            <FormItem className="flex items-center w-full gap-3">
+            <FormItem className="flex flex-col w-full">
               <FormLabel className="text-base-semibold">
                 Photos
               </FormLabel>
@@ -159,7 +159,7 @@ export function PostListForm() {
                   {...field}
                 />
               </FormControl>
-              <div className="bg-green-600 p-2 rounded-md text-white cursor-pointer hover:opacity-75">PredictQuality</div>
+              <div className="bg-green-600 p-2 rounded-md text-white cursor-pointer hover:opacity-75 w-[8rem]">PredictQuality</div>
               <FormMessage/>
             </FormItem>
           )}
