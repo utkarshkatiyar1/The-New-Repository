@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="m-0">
       
-        <body className={`${inter.className} m-0`}>
+        <body className={`${inter.className} m-0 bg-[#F9FAFB]`}>
           <ClerkProvider afterSignOutUrl={process.env.NEXT_PUBLIC_AFTER_SIGN_OUT_URL}>
             <Header/>
             <Providers>
